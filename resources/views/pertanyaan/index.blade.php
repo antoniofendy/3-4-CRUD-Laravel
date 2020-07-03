@@ -43,6 +43,7 @@
     </div>
     <!-- /.card-body -->
     </div>
+    <button type="button" class="btn btn-outline-info">Info</button>
 @endsection
 
 @push('script')

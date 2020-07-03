@@ -24,5 +24,7 @@
             </div>
         </div>
     @endforeach
-
+    <div class="container text-center">
+        <a href="{{url('/beri-jawaban/'. $pertanyaan->id_pertanyaan)}}"><button type="button" class="btn btn-outline-info">Berikan Jawabanmu</button></a>
+    </div>
 @endsection
