@@ -13,7 +13,6 @@
         }
 
         public static function show($id_pertanyaan){
-
             $show = DB::table('tb_pertanyaan')->where('id_pertanyaan', $id_pertanyaan)->first();
             return $show;
 

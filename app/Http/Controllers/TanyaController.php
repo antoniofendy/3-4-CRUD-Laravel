@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use \App\Models\TanyaModel;
+use \App\Models\JawabModel;
 
 class TanyaController extends Controller
 {
@@ -16,9 +17,9 @@ class TanyaController extends Controller
     }
 
     public function show($id_pertanyaan){
-
+        $allAnswer = JawabModel::getAllAnswer($id_pertanyaan);
         $data_tanya = TanyaModel::show($id_pertanyaan);
-        return view('pertanyaan.show', ['data_tanya'=>$data_tanya]);
+        return view('pertanyaan.show', ['data_tanya'=>$data_tanya, 'all_answer'=>$allAnswer]);
     }
 
     public function create(){
