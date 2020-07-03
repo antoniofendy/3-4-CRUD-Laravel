@@ -19,6 +19,9 @@
         }
 
         public static function giveAnswer($answer){
+            $time = date('Y-m-d H:i:s');
+            $answer['tanggal_dibuat'] = $time;
+            $answer['tanggal_diperbaharui'] = $time;
 
             $jawab = DB::table('tb_jawaban')->insert($answer);
             

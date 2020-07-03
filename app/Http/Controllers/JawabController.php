@@ -33,11 +33,10 @@ class JawabController extends Controller
     }
 
     public function store(Request $request){
-        date_default_timezone_set('Asia/Jakarta');
 
         $isi = $request->all();
-        $time = date('Y-m-d H:i:s');
         unset($isi['_token']);
+        $time = date('Y-m-d H:i:s');
         $isi['tanggal_dibuat'] = $time;
         $isi['tanggal_diperbaharui'] = $time;
 
