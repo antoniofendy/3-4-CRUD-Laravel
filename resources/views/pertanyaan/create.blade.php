@@ -1,6 +1,6 @@
 @extends('adminlte.master')
 
-@section('title', 'Tabel Pertanyaan')
+@section('title', 'Form Pertanyaan')
 
 @section('konten')
 <div class="card">
