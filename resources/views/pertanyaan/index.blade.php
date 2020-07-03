@@ -9,41 +9,19 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
-        <thead>
-        <tr>
-            <th>Judul</th>
-            <th>ID Penanya</th>
-            <th>Tanggal dibuat</th>
-            <th>Tanggal diperbaharui</th>
-            <th>Jawaban</th>
-        </tr>
-        </thead>
-        <tbody>
+        <ul class="list-group">
         @foreach ($data_tanya as $data)
-            <tr>
-                <td><a href="{{url('/jawaban/'.$data->id_pertanyaan)}}">{{$data->judul}}</a></td>
-                <td>{{$data->id_profil}}</td>
-                <td>{{$data->tanggal_dibuat}}</td>
-                <td>{{$data->tanggal_diperbaharui}}</td>
-                <td>{{$data->jml_jawaban}}</td>
-            </tr>
+            <li class="list-group-item d-flex justify-content-between align-items-center mb-2">
+                {{$data->judul}}
+                <a href="{{url('/pertanyaan/'. $data->id_pertanyaan)}}" class="badge badge-pill badge-info">Detail
+                </a>
+            </li>
         @endforeach
-        </tbody>
-        <tfoot>
-        <tr>
-            <th>Judul</th>
-            <th>ID Penanya</th>
-            <th>Tanggal dibuat</th>
-            <th>Tanggal diperbaharui</th>
-            <th>Jawaban</th>
-        </tr>
-        </tfoot>
-        </table>
+    </ul>
     </div>
     <!-- /.card-body -->
     </div>
-    <button type="button" class="btn btn-outline-info">Info</button>
+    
 @endsection
 
 @push('script')

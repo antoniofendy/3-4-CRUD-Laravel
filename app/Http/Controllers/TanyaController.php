@@ -15,6 +15,12 @@ class TanyaController extends Controller
         return view('pertanyaan.index', ['data_tanya'=>$data_tanya]);
     }
 
+    public function show($id_pertanyaan){
+
+        $data_tanya = TanyaModel::show($id_pertanyaan);
+        return view('pertanyaan.show', ['data_tanya'=>$data_tanya]);
+    }
+
     public function create(){
         return view('pertanyaan.create');
     }
