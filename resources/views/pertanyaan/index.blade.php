@@ -3,6 +3,9 @@
 @section('title', 'Tabel Pertanyaan')
 
 @section('konten')
+
+<a href="{{url('/pertanyaan/create')}}"><button type="button" class="btn btn-primary mb-2">Tambah Data</button></a>
+
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Tabel Pertanyaan</h3>

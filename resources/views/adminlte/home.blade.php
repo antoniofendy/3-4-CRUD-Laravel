@@ -4,8 +4,8 @@
 
 @section('konten')
     <div class="container mb-3">
-        <a href="{{url('/pertanyaan/create')}}"><button type="button" class="btn btn-primary btn-lg">Buat Pertanyaan</button></a>
-        <a href="{{url('/beri-jawaban')}}"><button type="button" class="btn btn-secondary btn-lg">Berikan Jawaban</button></a>
+        <a href="{{url('/pertanyaan/create')}}"><button type="button" class="btn btn-warning btn-lg">Buat Pertanyaan</button></a>
+        <a href="{{url('/beri-jawaban')}}"><button type="button" class="btn btn-info btn-lg">Berikan Jawaban</button></a>
     </div>
     <div class="container">
         <div class="card">

@@ -16,9 +16,9 @@ class CreateTbJawaban extends Migration
         Schema::create('tb_jawaban', function (Blueprint $table) {
             $table->integer('id_jawaban', true);
             $table->integer('id_pertanyaan');
-            $table->foreign('id_pertanyaan')->references('id_pertanyaan')->on('tb_pertanyaan');
+            $table->foreign('id_pertanyaan')->references('id_pertanyaan')->on('tb_pertanyaan')->onDelete('cascade')->onUpdate('cascade');
             $table->text('isi');
-            $table->bigInteger('id_profil');
+            $table->string('id_profil');
             $table->dateTime('tanggal_dibuat', 0);
             $table->dateTime('tanggal_diperbaharui', 0);
         });

@@ -17,6 +17,9 @@ Route::get('/pertanyaan', 'TanyaController@index');
 Route::get('/pertanyaan/create', 'TanyaController@create');
 Route::post('/pertanyaan', 'TanyaController@store');
 Route::get('/pertanyaan/{id_pertanyaan}', 'TanyaController@show');
+Route::get('/pertanyaan/{id_pertanyaan}/edit', 'TanyaController@edit');
+Route::put('/pertanyaan/{id_pertanyaan}', 'TanyaController@update');
+Route::delete('/pertanyaan/{id_pertanyaan}', 'TanyaController@delete');
 
 Route::get('/jawaban', 'JawabController@table');
 Route::get('/jawaban/{id_pertanyaan}', 'JawabController@index');

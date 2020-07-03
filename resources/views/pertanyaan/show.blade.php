@@ -30,8 +30,12 @@
                 <li style="list-style: none;"><b>Jumlah jawaban:</b> {{$data_tanya->jml_jawaban}}</li>
             </ul>
         </p>
-        <a href="#" class="btn btn-primary">Update</a>
-        <a href="{{url('/pertanyaan/'. $data_tanya->id_pertanyaan)}}" class="btn btn-danger">Delete</a>
+        <a href="{{url('/pertanyaan/'. $data_tanya->id_pertanyaan. "/edit")}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+        <form method="post" action="{{url('/pertanyaan/'.$data_tanya->id_pertanyaan)}}" style="display: inline">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+        </form>
     </div>
 </div>
 

@@ -16,7 +16,7 @@ class CreateTbPertanyaan extends Migration
         Schema::create('tb_pertanyaan', function (Blueprint $table) {
             $table->integer('id_pertanyaan',true);
             $table->string('judul', 255);
-            $table->bigInteger('id_profil');
+            $table->string('id_profil');
             $table->text('isi');
             $table->integer('jml_jawaban');
             $table->dateTime('tanggal_dibuat', 0);

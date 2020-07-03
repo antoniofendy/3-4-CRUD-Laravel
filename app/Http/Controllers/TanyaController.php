@@ -26,7 +26,7 @@ class TanyaController extends Controller
     }
 
     public function store(Request $request){
-        date_default_timezone_set('Asia/Jakarta');
+        
 
         $isi = $request->all();
         $time = date('Y-m-d H:i:s');
@@ -36,6 +36,21 @@ class TanyaController extends Controller
         $isi['tanggal_diperbaharui'] = $time;
         
         $buat = TanyaModel::insert($isi);
-        return view('pertanyaan.store', ['buat'=>$buat]);
+        return view('pertanyaan.store', ['info'=>$buat, 'ket'=>'Buat']);
+    }
+
+    public function edit($id_pertanyaan){
+        $data_tanya = TanyaModel::show($id_pertanyaan);
+        return view('pertanyaan.edit', compact("data_tanya"));
+    }
+
+    public function update($id_pertanyaan, Request $request){
+        $update =  TanyaModel::update($request->all());
+        return view('pertanyaan.store', ['info' => $update, 'ket'=>'Edit']);
+    }   
+
+    public function delete($id_pertanyaan){
+        $delete = TanyaModel::delete($id_pertanyaan);
+        return view('pertanyaan.store', ['info' => $delete, 'ket'=>'Hapus']);
     }
 }

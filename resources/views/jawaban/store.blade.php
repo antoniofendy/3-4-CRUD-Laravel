@@ -11,13 +11,13 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-6 col-sm-12">
-                @if ($jawaban == true)
+                @if ($info == true)
                     <div class="alert alert-primary" role="alert">
-                        Berhasil Memberikan Jawaban
+                        Berhasil {{$ket}} Jawaban
                     </div>
                 @else
                     <div class="alert alert-danger" role="alert">
-                        Gagal Memberikan Jawaban
+                        Gagal {{$ket}} Jawaban
                     </div>
                 @endif
             </div>

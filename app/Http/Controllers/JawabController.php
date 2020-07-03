@@ -43,7 +43,7 @@ class JawabController extends Controller
 
         $jawaban = JawabModel::giveAnswer($isi);
 
-        return view('jawaban.store', ['jawaban'=>$jawaban]);
+        return view('jawaban.store', ['info'=>$jawaban, 'ket'=>'Memberikan']);
 
         
     }
