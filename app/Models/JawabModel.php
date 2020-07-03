@@ -17,6 +17,19 @@
             $getAnswer = DB::select(DB::raw("SELECT *FROM tb_jawaban WHERE id_pertanyaan=" . $id_pertanyaan));
             return $getAnswer;
         }
+
+        public static function giveAnswer($answer){
+
+            $jawab = DB::table('tb_jawaban')->insert($answer);
+            
+            //menambahkan jumlah jawaban pada pertanyaan
+            DB::table('tb_pertanyaan')
+            ->where('id_pertanyaan', $answer['id_pertanyaan'])
+            ->increment('jml_jawaban', 1);
+
+            return $jawab;
+
+        }
         
     }
 

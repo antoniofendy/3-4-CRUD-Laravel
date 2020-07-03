@@ -25,6 +25,27 @@ class JawabController extends Controller
     public function jawab(){
         $tanya = TanyaModel::getAll();
         return view('jawaban.jawab', ['tanya'=>$tanya]);
+    }   
+
+    public function berijawaban($id_pertanyaan){
+        $tanya = TanyaModel::show($id_pertanyaan);
+        return view('jawaban.berijawaban', ['tanya'=>$tanya]);
+    }
+
+    public function store(Request $request){
+        date_default_timezone_set('Asia/Jakarta');
+
+        $isi = $request->all();
+        $time = date('Y-m-d H:i:s');
+        unset($isi['_token']);
+        $isi['tanggal_dibuat'] = $time;
+        $isi['tanggal_diperbaharui'] = $time;
+
+        $jawaban = JawabModel::giveAnswer($isi);
+
+        return view('jawaban.store', ['jawaban'=>$jawaban]);
+
+        
     }
 
 }

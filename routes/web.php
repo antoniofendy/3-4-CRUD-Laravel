@@ -19,4 +19,6 @@ Route::post('/pertanyaan', 'TanyaController@store');
 
 Route::get('/jawaban', 'JawabController@table');
 Route::get('/jawaban/{id_pertanyaan}', 'JawabController@index');
-Route::get('/jawaban/jawab', 'JawabController@jawab');
+Route::post('/jawaban/{id_pertanyaan}', 'JawabController@store');
+Route::get('/beri-jawaban', 'JawabController@jawab');
+Route::get('/beri-jawaban/{id_pertanyaan}', 'JawabController@berijawaban');
