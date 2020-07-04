@@ -9,7 +9,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            {{$pertanyaan->isi}}
+            {!!$pertanyaan->isi!!}
         </div>
         <!-- /.card-body -->
     </div>
