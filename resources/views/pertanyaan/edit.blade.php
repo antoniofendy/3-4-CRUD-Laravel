@@ -10,7 +10,7 @@
     <!-- /.card-header -->
     <div class="card-body">
         <div class="row">
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-8 col-sm-12">
                 <form method="post" action="{{url('/pertanyaan/'.$data_tanya->id_pertanyaan)}}">
                     @csrf
                     <!-- Menredirect method post menjadi put sesuai di route -->
@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                         <label for="isi">Isi Pertanyaan</label>
-                        <textarea name="isi" class="form-control" placeholder="ex: Saya ingin mengetahui ..." required  cols="30" rows="5">{{$data_tanya->isi}}</textarea>
+                        <textarea name="isi" class="form-control" placeholder="ex: Saya ingin mengetahui ..." required  cols="30" rows="5" id="isi">{!!$data_tanya->isi!!}</textarea>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Edit</button>
@@ -38,3 +38,12 @@
     <!-- /.card-body -->
     </div>
 @endsection
+
+@push('script')
+    <script src="{{asset('ckeditor\ckeditor.js')}}"></script>
+    <script>    
+        CKEDITOR.replace('isi');
+    </script>
+    
+    
+@endpush

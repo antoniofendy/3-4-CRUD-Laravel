@@ -11,7 +11,7 @@
         <h5 class="card-title"><b>{{$tanya->judul}}</b></h5>
         <hr>
         <h6 class="card-subtitle mb-2 text-muted">Dari : {{$tanya->id_profil}}</h6>
-        <p class="card-text">{{$tanya->isi}}</p>
+        <p class="card-text">{!!$tanya->isi!!}</p>
     </div>
 </div>
 <div class="card">
@@ -40,6 +40,8 @@
     </div>
 </div>
 
+@endsection
+
 @push('script')
     <script src="{{asset('ckeditor\ckeditor.js')}}"></script>
     <script>    
@@ -48,8 +50,6 @@
     
     
 @endpush
-
-@endsection
 
 
 
