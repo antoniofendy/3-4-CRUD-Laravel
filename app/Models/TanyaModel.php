@@ -19,6 +19,11 @@
         }
 
         public static function insert($data){
+            $time = date('Y-m-d H:i:s');
+            $data['jml_jawaban'] = 0;
+            $data['tanggal_dibuat'] = $time;
+            $data['tanggal_diperbaharui'] = $time;
+
             $buat = DB::table('tb_pertanyaan')->insert($data);
             return $buat;
         }

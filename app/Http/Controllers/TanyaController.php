@@ -27,15 +27,9 @@ class TanyaController extends Controller
     }
 
     public function store(Request $request){
-        
-
         $isi = $request->all();
-        $time = date('Y-m-d H:i:s');
         unset($isi['_token']);
-        $isi['jml_jawaban'] = 0;
-        $isi['tanggal_dibuat'] = $time;
-        $isi['tanggal_diperbaharui'] = $time;
-        
+
         $buat = TanyaModel::insert($isi);
         return view('pertanyaan.store', ['info'=>$buat, 'ket'=>'Buat']);
     }
