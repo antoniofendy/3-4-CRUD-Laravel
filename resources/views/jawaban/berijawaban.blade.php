@@ -3,6 +3,8 @@
 @section('title', 'Beri Jawaban')
 
 @section('konten')
+
+
     
 <div class="card bg-warning">
     <div class="card-body">
@@ -16,7 +18,7 @@
     <div class="card-body">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-8 col-sm-12">
                     <form method="post" action="{{url('/jawaban/'.$tanya->id_pertanyaan)}}">
                         @csrf
                         <input type="hidden" name="id_pertanyaan" value="{{$tanya->id_pertanyaan}}">
@@ -26,7 +28,7 @@
                         </div>
                         <div class="form-group">
                             <label for="isi">Isi Jawaban</label>
-                            <textarea name="isi" class="form-control" placeholder="ex: Menurut saya ..." required  cols="30" rows="5"></textarea>
+                            <textarea name="isi" class="form-control" cols="30" rows="5" id="isi"></textarea>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Beri Jawaban</button>
@@ -38,5 +40,16 @@
     </div>
 </div>
 
+@push('script')
+    <script src="{{asset('ckeditor\ckeditor.js')}}"></script>
+    <script>    
+        CKEDITOR.replace('isi');
+    </script>
+    
+    
+@endpush
+
 @endsection
+
+
 

@@ -10,7 +10,7 @@
     <!-- /.card-header -->
     <div class="card-body">
         <div class="row">
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-8 col-sm-12">
                 <form method="post" action="{{url('/pertanyaan')}}">
                     @csrf
                     <div class="form-group">
@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label for="isi">Isi Pertanyaan</label>
-                        <textarea name="isi" class="form-control" placeholder="ex: Saya ingin mengetahui ..." required  cols="30" rows="5"></textarea>
+                        <textarea name="isi" class="form-control" placeholder="ex: Saya ingin mengetahui ..." required  cols="30" rows="5" id="isi"></textarea>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Buat</button>
@@ -34,4 +34,12 @@
     </div>
     <!-- /.card-body -->
     </div>
+
 @endsection
+
+@push('script')
+<script src="{{asset('ckeditor\ckeditor.js')}}"></script>
+<script>    
+    CKEDITOR.replace('isi');
+</script>
+@endpush
