@@ -21,7 +21,7 @@
     <h5 class="card-header text-bold">{{$data_tanya->judul}}</h5>
     <div class="card-body">
         <h5 class="card-title text-bold">Dari : {{$data_tanya->id_profil}}</h5>
-        <p class="card-text">{{$data_tanya->isi}}</p>
+        <p class="card-text">{!!$data_tanya->isi!!}</p>
         <hr>
         <p class="card-text text-bold">Detail : 
             <ul>
