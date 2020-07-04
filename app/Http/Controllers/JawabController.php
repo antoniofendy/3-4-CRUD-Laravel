@@ -36,9 +36,6 @@ class JawabController extends Controller
 
         $isi = $request->all();
         unset($isi['_token']);
-        $time = date('Y-m-d H:i:s');
-        $isi['tanggal_dibuat'] = $time;
-        $isi['tanggal_diperbaharui'] = $time;
 
         $jawaban = JawabModel::giveAnswer($isi);
 
